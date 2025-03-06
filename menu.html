@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts with preload -->
+    <link rel="preload" 
+          href="https://fonts.googleapis.com/css2?family=Sigmar&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" 
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Sigmar&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" 
+              rel="stylesheet">
+    </noscript>
+    <link rel="stylesheet" href="styles.css">
+    <title>Gourmet Restaurant Menu</title>
+</head>
+<body>
+    <nav class="main-nav">
+        <h1 class="restaurant-title">La Maison du Goût</h1>
+    </nav>
+
+    <div class="menu-container">
+        <nav class="category-nav">
+            <a href="#main-course" class="category-link">Main Courses</a>
+            <a href="#appetizers" class="category-link">Appetizers</a>
+            <a href="#desserts" class="category-link">Desserts</a>
+            <a href="#beverages" class="category-link">Beverages</a>
+        </nav>
+
+        <div class="menu-grid">
+            <!-- Main Course Example -->
+            <article class="menu-item" id="main-course">
+                <div class="item-image-container">
+                    <img src="images/steak.jpg" alt="Black Pepper Steak" class="item-image">
+                    <span class="price-tag">$28</span>
+                </div>
+                <div class="item-details">
+                    <h3 class="item-title">Black Pepper Steak</h3>
+                    <p class="item-description">Premium Australian grain-fed beef with signature black pepper sauce, served with roasted vegetables and mashed potatoes.</p>
+                </div>
+            </article>
+
+            <!-- Appetizer Example -->
+            <article class="menu-item" id="appetizers">
+                <div class="item-image-container">
+                    <img src="images/salad.jpg" alt="Fresh Fruit Salad" class="item-image">
+                    <span class="price-tag">$12</span>
+                </div>
+                <div class="item-details">
+                    <h3 class="item-title">Seasonal Fruit Salad</h3>
+                    <p class="item-description">Fresh seasonal fruits with mixed nuts and yogurt dressing, featuring strawberry, blueberry, mango and kiwi.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

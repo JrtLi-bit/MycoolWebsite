@@ -1,0 +1,192 @@
+:root {
+    --primary-color: #8b0000;
+    --secondary-color: #f4a460;
+    --text-color: #333;
+    --heading-font: 'Sigmar', cursive;
+    --body-font: 'Zen Maru Gothic', 'Noto Sans SC', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f5f5f5;
+    font-weight: 400;
+}
+
+/* Navigation Styles */
+.main-nav {
+    background-color: var(--primary-color);
+    padding: 1.2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.restaurant-title {
+    color: white;
+    text-align: center;
+    font-family: var(--heading-font);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* Menu Container */
+.menu-container {
+    max-width: 1200px;
+    margin: 100px auto 30px;
+    padding: 0 20px;
+}
+
+/* Category Navigation */
+.category-nav {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 15px 0;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.category-link {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.category-link:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 20px 0;
+}
+
+/* Menu Items */
+.menu-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.item-image-container {
+    position: relative;
+}
+
+.item-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.price-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.item-details {
+    padding: 25px;
+}
+
+.item-title {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-family: var(--heading-font);
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.item-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-grid {
+        gap: 30px;
+    }
+    
+    .category-link {
+        margin: 0 10px;
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .item-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-container {
+        margin-top: 80px;
+    }
+    
+    .category-nav {
+        margin-bottom: 30px;
+    }
+    
+    .category-link {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .item-image {
+        height: 200px;
+    }
+    
+    .item-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Font Loading States */
+.font-loading body {
+    visibility: hidden;
+}
+
+.font-loaded body {
+    visibility: visible;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
