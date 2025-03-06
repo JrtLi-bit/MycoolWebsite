@@ -2,8 +2,8 @@
     --primary-color: #8b0000;
     --secondary-color: #f4a460;
     --text-color: #333;
-    --heading-font: 'Sigmar', cursive;
-    --body-font: 'Zen Maru Gothic', 'Noto Sans SC', sans-serif;
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Lora', serif;
 }
 
 * {
@@ -127,7 +127,7 @@ body {
     margin-bottom: 15px;
     font-family: var(--heading-font);
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: 2rem;
 }
 
 .item-description {
