@@ -1,8 +1,10 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
+    background: linear-gradient(135deg, #1e1e2e, #282a36);
+    color: white;
     scroll-behavior: smooth;
 }
 
@@ -11,19 +13,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #333;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     padding: 15px 20px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar .logo {
-    color: white;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
+    color: #ffcc00;
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -39,16 +44,17 @@ body {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
+    color: #ffcc00;
 }
 
 /* Mobile Menu */
 .menu-icon {
     display: none;
-    font-size: 24px;
+    font-size: 28px;
     color: white;
     cursor: pointer;
 }
@@ -58,11 +64,12 @@ body {
         display: none;
         flex-direction: column;
         position: absolute;
-        background: #333;
+        background: rgba(0, 0, 0, 0.9);
         top: 60px;
         right: 0;
         width: 100%;
         text-align: center;
+        padding: 10px 0;
     }
 
     .nav-links.active {
@@ -76,48 +83,120 @@ body {
 
 /* Hero Section */
 .hero {
-    background: #1e90ff;
+    background: linear-gradient(135deg, #1e90ff, #ff4081);
     color: white;
-    padding: 100px 20px;
+    padding: 120px 20px;
     margin-top: 60px;
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .hero h1 span {
     color: #ffcc00;
 }
 
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
 .btn {
-    background: white;
-    color: #1e90ff;
-    padding: 10px 20px;
+    background: #ffcc00;
+    color: black;
+    padding: 12px 25px;
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
 }
 
 /* Sections */
 .about, .projects, .contact {
-    padding: 50px 20px;
+    padding: 80px 20px;
 }
 
+.about h2, .projects h2, .contact h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+/* Projects Section */
 .project-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
 .project {
-    background: #f4f4f4;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 320px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project h3 {
+    color: #ffcc00;
+}
+
+.project p {
+    opacity: 0.8;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #ffcc00;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact p {
+    font-size: 18px;
+}
+
+.contact a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
 }
 
 /* Footer */
 footer {
-    background: #333;
-    color: white;
-    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
 }
