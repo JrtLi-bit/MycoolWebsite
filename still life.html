@@ -1,66 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Still Life  </title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f3eacb;
-        }
-        .scene {
-            position: relative;
-            width: 300px;
-            height: 200px;
-        }
-        .bowl {
-            position: absolute;
-            bottom: 0;
-            width: 200px;
-            height: 80px;
-            background-color: #8B5A2B;
-            border-radius: 100px 100px 0 0;
-            left: 50px;
-        }
-        .fruit {
-            position: absolute;
-            border-radius: 50%;
-        }
-        .apple {
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            top: 60px;
-            left: 70px;
-        }
-        .orange {
-            width: 50px;
-            height: 50px;
-            background-color: orange;
-            top: 50px;
-            left: 120px;
-        }
-        .banana {
-            width: 80px;
-            height: 30px;
-            background-color: yellow;
-            border-radius: 50px;
-            top: 40px;
-            left: 100px;
-            transform: rotate(-20deg);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computer Still Life</title>
+  <link rel="stylesheet" href="table.css" />
 </head>
 <body>
-    <div class="scene">
-        <div class="bowl"></div>
-        <div class="fruit apple"></div>
-        <div class="fruit orange"></div>
-        <div class="fruit banana"></div>
-    </div>
+  <div id="table"></div>
+  <div id="computer-base"></div>
+  <div id="monitor"></div>
+  <div id="screen"></div>
+  <div id="keyboard"></div>
+  <div id="keys">
+    <!-- You can adjust how many keys you want to display -->
+    <div class="key"></div>
+    <div class="key"></div>
+    <div class="key"></div>
+    <div class="key"></div>
+    <div class="key"></div>
+    <div class="key"></div>
+    <div class="key"></div>
+    <div class="key"></div>
+    <div class="key"></div>
+    <div class="key"></div>
+    <!-- Repeat or generate more as needed -->
+  </div>
+  <div id="mouse"></div>
 </body>
 </html>
