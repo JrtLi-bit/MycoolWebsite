@@ -1,0 +1,84 @@
+body {
+  background-color: #f0e6dc;
+}
+
+#table {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(#a47c48, #6e4b28);
+}
+
+#computer-base {
+  position: absolute;
+  bottom: 200px;
+  left: 600px;
+  width: 280px;
+  height: 40px;
+  background: #2c2c2c;
+  border-radius: 10px;
+}
+
+#monitor {
+  position: absolute;
+  bottom: 240px;
+  left: 620px;
+  width: 240px;
+  height: 160px;
+  background: linear-gradient(to bottom, #cfcfcf, #8a8a8a);
+  border-radius: 6px;
+  border: 6px solid #1f1f1f;
+}
+
+#screen {
+  position: absolute;
+  bottom: 260px;
+  left: 640px;
+  width: 200px;
+  height: 120px;
+  background: #1d1f21;
+  border-radius: 3px;
+  box-shadow: inset 0 0 10px #0ff;
+}
+
+#keyboard {
+  position: absolute;
+  bottom: 160px;
+  left: 580px;
+  width: 320px;
+  height: 30px;
+  background: #3c3c3c;
+  border-radius: 4px;
+}
+
+#keys {
+  position: absolute;
+  bottom: 165px;
+  left: 590px;
+  width: 300px;
+  height: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.key {
+  width: 18px;
+  height: 18px;
+  background: #dcdcdc;
+  border-radius: 2px;
+  box-shadow: inset 0 0 2px #000;
+}
+
+#mouse {
+  position: absolute;
+  bottom: 170px;
+  left: 920px;
+  width: 40px;
+  height: 60px;
+  background: #5f5f5f;
+  border-radius: 20px / 30px;
+  border: 2px solid #2f2f2f;
+}
