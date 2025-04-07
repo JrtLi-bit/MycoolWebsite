@@ -1,43 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar with External Links</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Jarrett Li - Portfolio</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background: #121212;
+            color: #f0f0f0;
         }
 
         .navbar {
-            background-color: #333;
+            position: sticky;
+            top: 0;
+            background-color: #1f1f1f;
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
-            padding: 14px 20px;
-            display: inline-block;
+            padding: 10px 15px;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
         }
 
         .navbar a:hover {
-            background-color: #575757;
-            border-radius: 5px;
+            background-color: #333;
+            border-radius: 6px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 30px;
+            background: linear-gradient(120deg, #1f1f1f, #292929);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 0;
+            color: #ffffff;
+            text-shadow: 0 0 10px #555;
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #555;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .media-placeholder {
+            background-color: #2c2c2c;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            color: #888;
+            font-size: 1.2rem;
+            border: 1px dashed #444;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <div class="navbar">
-        <a href="https://www.google.com" target="_blank">Google</a>
-        <a href="https://www.youtube.com" target="_blank">YouTube</a>
-        <a href="https://www.github.com" target="_blank">GitHub</a>
+        <div>
+            <a href="#my-edits">My Edits</a>
+            <a href="#work-process">Work Process</a>
+            <a href="#photography">Photography</a>
+            <a href="#cinematography">Cinematography</a>
+            <a href="#three-d">3D</a>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/t1de.aep?igsh=enc5a2dvaHI5emJp&utm_source=qr" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/@jarrettli8284" target="_blank">YouTube</a>
+            <a href="https://github.com/JrtLi-bit/MycoolWebsite" target="_blank">GitHub</a>
+        </div>
     </div>
+
+    <!-- Hero Title -->
+    <div class="hero">
+        <h1>Jarrett Li</h1>
+    </div>
+
+    <!-- Portfolio Sections -->
+    <section id="my-edits" class="section">
+        <h2>My Edits</h2>
+        <div class="media-grid">
+            <div class="media-placeholder">Video Placeholder</div>
+            <div class="media-placeholder">Video Placeholder</div>
+            <div class="media-placeholder">Image Placeholder</div>
+        </div>
+    </section>
+
+    <section id="work-process" class="section">
+        <h2>Work Process</h2>
+        <div class="media-grid">
+            <div class="media-placeholder">Workflow Clip</div>
+            <div class="media-placeholder">Timeline Screenshot</div>
+            <div class="media-placeholder">Before/After Comparison</div>
+        </div>
+    </section>
+
+    <section id="photography" class="section">
+        <h2>Photography</h2>
+        <div class="media-grid">
+            <div class="media-placeholder">Photo Placeholder</div>
+            <div class="media-placeholder">Photo Placeholder</div>
+            <div class="media-placeholder">Photo Placeholder</div>
+        </div>
+    </section>
+
+    <section id="cinematography" class="section">
+        <h2>Cinematography</h2>
+        <div class="media-grid">
+            <div class="media-placeholder">Cinematic Shot</div>
+            <div class="media-placeholder">Color Grading Sample</div>
+            <div class="media-placeholder">Lighting Setup</div>
+        </div>
+    </section>
+
+    <!-- 3D Section -->
+    <section id="three-d" class="section">
+        <h2>3D</h2>
+        <div class="media-grid">
+            <div class="media-placeholder">3D Render</div>
+            <div class="media-placeholder">Model Showcase</div>
+            <div class="media-placeholder">Animation Demo</div>
+        </div>
+    </section>
 
 </body>
 </html>
