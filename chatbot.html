@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Chatbot</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    #chatbox { height: 400px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+    .user { color: blue; }
+    .bot { color: green; }
+  </style>
+</head>
+<body>
+
+  <h2>AI Chatbot</h2>
+  <div id="chatbox"></div>
+  <input id="userInput" type="text" placeholder="Type a message..." />
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    const chatbox = document.getElementById('chatbox');
+
+    function appendMessage(sender, message, className) {
+      chatbox.innerHTML += `<p class="${className}"><strong>${sender}:</strong> ${message}</p>`;
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const userMessage = input.value.trim();
+      if (!userMessage) return;
+
+      appendMessage("You", userMessage, "user");
+      input.value = '';
+
+      try {
+        const response = await fetch('/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: userMessage })
+        });
+
+        const data = await response.json();
+        appendMessage("Bot", data.reply, "bot");
+      } catch (error) {
+        appendMessage("Bot", "Error talking to the AI server.", "bot");
+      }
+    }
+  </script>
+
+</body>
+</html>

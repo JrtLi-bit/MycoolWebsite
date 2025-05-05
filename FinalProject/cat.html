@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtual Pet Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Virtual Pet Game 🐾</h1>
+    <div id="pet-name-container">
+      <input type="text" id="pet-name-input" placeholder="Enter pet name" />
+      <button onclick="setPetName()">Name Pet</button>
+    </div>
+    <div id="pet-display" class="hidden">
+      <h2 id="pet-name"></h2>
+      <div id="pet" class="pet">😺</div>
+      <div class="status-bar">
+        <label>Hunger</label>
+        <div class="bar">
+          <div id="hunger-bar" class="fill"></div>
+        </div>
+      </div>
+      <div class="status-bar">
+        <label>Thirst</label>
+        <div class="bar">
+          <div id="thirst-bar" class="fill"></div>
+        </div>
+      </div>
+      <div class="status-bar">
+        <label>Boredom</label>
+        <div class="bar">
+          <div id="boredom-bar" class="fill"></div>
+        </div>
+      </div>
+      <div class="actions">
+        <button onclick="feedPet('meat')">🍖 Meat</button>
+        <button onclick="feedPet('fish')">🐟 Fish</button>
+        <button onclick="feedPet('milk')">🥛 Milk</button>
+        <button onclick="playWithPet()">🎾 Play</button>
+        <button onclick="giveWater()">💧 Water</button>
+      </div>
+      <p id="message">I'm hungry!</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

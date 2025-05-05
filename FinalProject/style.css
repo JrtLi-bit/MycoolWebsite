@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #fef8e2;
+    padding-top: 50px;
+  }
+  
+  .game-container {
+    max-width: 500px;
+    margin: auto;
+    background: #fff8dc;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .pet {
+    font-size: 80px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .status-bar {
+    margin: 10px 0;
+  }
+  
+  .status-bar label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 20px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .fill {
+    height: 100%;
+    width: 0%;
+    background: #ffa07a;
+    transition: width 0.3s;
+  }
+  
+  .actions button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    background: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .actions button:hover {
+    background: #ff6347;
+  }
+  

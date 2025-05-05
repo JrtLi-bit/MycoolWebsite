@@ -1,0 +1,21 @@
+{
+  "name": "chrome调试",
+  "type": "chrome",
+  "request": "launch",
+  "file":"${file}",
+ "runtimeExecutable":"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  //:这里写自己浏览器的安装路径
+  "sourceMaps":true,
+  "webRoot": "${workspaceRoot}",
+  "port": 9222,
+  "configurations": [
+
+  {
+    "name": "Attach to Chrome",
+    "port": 9222,
+    "request": "attach",
+    "type": "chrome",
+    "webRoot": "${workspaceFolder}"
+  }
+  ]
+}
