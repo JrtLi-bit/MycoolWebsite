@@ -1,75 +1,53 @@
-let petName = '';
-let hunger = 100;
-let thirst = 100;
-let boredom = 100;
+let hunger = 2.5, thirst = 2.5, boredom = 2.5;
+const maxStat = 5;
 
-const petNameInput = document.getElementById('pet-name-input');
-const petNameDisplay = document.getElementById('pet-name');
-const petDisplay = document.getElementById('pet-display');
-const petElement = document.getElementById('pet');
-const hungerBar = document.getElementById('hunger-bar');
-const thirstBar = document.getElementById('thirst-bar');
-const boredomBar = document.getElementById('boredom-bar');
-const message = document.getElementById('message');
-
-function setPetName() {
-  petName = petNameInput.value.trim();
-  if (petName) {
-    petNameDisplay.textContent = petName;
-    document.getElementById('pet-name-container').classList.add('hidden');
-    petDisplay.classList.remove('hidden');
-    updateStatus();
-    startDecay();
-  }
+// Update bars immediately
+function updateBars() {
+  document.getElementById('hungerBar').style.width = (hunger / maxStat * 100) + '%';
+  document.getElementById('thirstBar').style.width = (thirst / maxStat * 100) + '%';
+  document.getElementById('boredomBar').style.width = (boredom / maxStat * 100) + '%';
 }
 
-function updateStatus() {
-  hungerBar.style.width = `${hunger}%`;
-  thirstBar.style.width = `${thirst}%`;
-  boredomBar.style.width = `${boredom}%`;
-
-  if (hunger < 30 || thirst < 30 || boredom < 30) {
-    petElement.textContent = '😿';
-    message.textContent = `${petName} needs attention!`;
-  } else {
-    petElement.textContent = '😺';
-    message.textContent = `${petName} is happy!`;
-  }
+// Stat decay
+function startDecay() {
+  setInterval(() => {
+    hunger = Math.max(0, hunger - 0.2);
+    thirst = Math.max(0, thirst - 0.2);
+    boredom = Math.max(0, boredom - 0.4);
+    updateBars();
+  }, 3000);
 }
 
-function feedPet(food) {
-  switch(food) {
-    case 'meat':
-      hunger = Math.min(hunger + 20, 100);
-      break;
-    case 'fish':
-      hunger = Math.min(hunger + 15, 100);
-      break;
-    case 'milk':
-      hunger = Math.min(hunger + 10, 100);
-      thirst = Math.min(thirst + 10, 100);
-      break;
+// Name pet
+function namePet() {
+  const input = document.getElementById('petNameInput').value.trim();
+  if (input) document.getElementById('gameTitle').textContent = input + ' the Pet 🐾';
+}
+
+// Interactions
+function feed(type) {
+  if (hunger < maxStat) {
+    hunger = Math.min(maxStat, hunger + 0.5);
+    if (type === 'fish') thirst = Math.min(maxStat, thirst + 0.3);
+    document.getElementById('pet').textContent = '😋';
+    animatePet(); updateBars();
   }
-  updateStatus();
 }
 
 function giveWater() {
-  thirst = Math.min(thirst + 20, 100);
-  updateStatus();
+  if (thirst < maxStat) {
+    thirst = Math.min(maxStat, thirst + 0.5);
+    document.getElementById('pet').textContent = '😌';
+    animatePet(); updateBars();
+  }
 }
 
-function playWithPet() {
-  boredom = Math.min(boredom + 20, 100);
-  hunger = Math.max(hunger - 5, 0);
-  thirst = Math.max(thirst - 5, 0);
-  updateStatus();
+// Pet animation
+function animatePet() {
+  const petEl = document.getElementById('pet');
+  petEl.style.transform = 'scale(1.2)';
+  setTimeout(() => petEl.style.transform = 'scale(1)', 300);
 }
 
-function startDecay() {
-  setInterval(() => {
-    hunger = Math.max(hunger - 1, 0);
-    thirst = Math.max(thirst - 1, 0);
-    boredom = Math.max(boredom - 1, 0);
-    updateStatus();
-  }, 1000);
-}
+// Initialize
+updateBars(); startDecay();

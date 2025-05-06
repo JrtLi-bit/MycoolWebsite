@@ -1,65 +1,47 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #fef8e2;
-    padding-top: 50px;
-  }
-  
-  .game-container {
-    max-width: 500px;
-    margin: auto;
-    background: #fff8dc;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .pet {
-    font-size: 80px;
-    margin-bottom: 20px;
-    transition: transform 0.3s;
-  }
-  
-  .status-bar {
-    margin: 10px 0;
-  }
-  
-  .status-bar label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .bar {
-    width: 100%;
-    height: 20px;
-    background: #eee;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .fill {
-    height: 100%;
-    width: 0%;
-    background: #ffa07a;
-    transition: width 0.3s;
-  }
-  
-  .actions button {
-    padding: 10px 15px;
-    margin: 5px;
-    font-size: 16px;
-    background: #ff7f50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .actions button:hover {
-    background: #ff6347;
-  }
-  
+body, h1, label, input, button {
+  font-family: 'Press Start 2P', cursive;
+}
+.game-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 20px;
+  align-items: start;
+  min-height: 600px;
+  padding: 20px;
+}
+.left-panel, .center-panel, .right-panel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.stats-panel { display: flex; flex-direction: column; gap: 10px; }
+.bar { width: 100%; height: 30px; background: #eee; border-radius: 10px; overflow: hidden; }
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s;
+  /* Default color for hunger */
+  background: #90ee90;
+}
+.progress-bar.blue { background: #87ceeb; }
+.progress-bar.purple { background: #dda0dd; }
+.center-panel { text-align: center; }
+.pet { font-size: 90px; transition: transform 0.3s; }
+.right-panel { display: flex; flex-direction: column; gap: 10px; }
+.right-panel button {
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  background: #ffb347;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.right-panel button:hover { background: #ff9966; }
+@media (max-width: 600px) {
+  .game-layout { grid-template-columns: 1fr; }
+  .bar { height: 25px; }
+  .right-panel button { padding: 12px; }
+}
