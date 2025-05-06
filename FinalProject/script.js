@@ -1,4 +1,5 @@
 let hunger = 2.5, thirst = 2.5, boredom = 2.5;
+let hasMeowed = false;
 const maxStat = 5;
 
 const DEFAULT_GIF = 'gifs/待机.gif';
@@ -11,6 +12,7 @@ const sfxMeat  = new Audio('sounds/eating1.mp3');
 const sfxFish  = new Audio('sounds/eating2.mp3');
 const sfxWater = new Audio('sounds/drinking.mp3');
 const sfxPet   = new Audio('sounds/meow.mp3');
+const sfxdying  = new Audio('sounds/hungrymeow.mp3');
 
 [sfxMeat, sfxFish, sfxWater, sfxPet].forEach(sfx => sfx.load());
 
@@ -24,10 +26,12 @@ function updateBars() {
 // Stat decay
 function startDecay() {
   setInterval(() => {
-    hunger = Math.max(0, hunger - 0.2);
-    thirst = Math.max(0, thirst - 0.2);
-    boredom = Math.max(0, boredom - 0.4);
+    hunger   = Math.max(0, hunger   - 0.2);
+    thirst   = Math.max(0, thirst   - 0.2);
+    boredom  = Math.max(0, boredom  - 0.4);
+
     updateBars();
+    checkAllStatsZero();  // ← trigger meow when everything’s at 0
   }, 3000);
 }
 
@@ -113,6 +117,18 @@ function animatePet() {
   setTimeout(() => petEl.style.transform = 'scale(1)', 300);
 }
 
+function checkAllStatsZero() {
+  if (hunger === 0 && thirst === 0 && boredom === 0) {
+    if (!hasMeowed) {
+      hasMeowed = true;
+      sfxdying.play();            // play the meow sound
+      flashPetGif(DEFAULT_GIF); // optional: flash idle GIF as a “sad” cue
+    }
+  } else {
+    // reset once any stat goes above zero again
+    hasMeowed = false;
+  }
+}
 
 
 // Initialize
